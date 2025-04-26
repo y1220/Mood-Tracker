@@ -1,0 +1,64 @@
+<!-- app/views/pages/home.html.erb -->
+<div class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8 text-center">
+      <h1 class="display-4 fw-bold mb-4">MoodTrack</h1>
+      <p class="lead mb-5">Track your daily mood patterns and gain insights into your emotional well-being</p>
+
+      <div class="d-grid gap-3 d-md-flex justify-content-md-center">
+        <a href="/moods/new" class="btn btn-lg px-4" style="background-color: #FFD6E0; color: #333;">Log Mood</a>
+        <a href="/moods" class="btn btn-lg px-4" style="background-color: #C1E1C5; color: #333;">View History</a>
+        <a href="/tasks" class="btn btn-lg px-4" style="background-color: #AED6F1; color: #333;">Manage Tasks</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mt-5 pt-5">
+    <div class="col-md-4 mb-4">
+      <div class="card h-100 border-0 shadow-sm" style="background-color: #FFF2CC;">
+        <div class="card-body text-center p-4">
+          <i class="bi bi-emoji-smile display-1 mb-3"></i>
+          <h3 class="card-title">Track Daily</h3>
+          <p class="card-text">Record your mood and contributing factors each day to build valuable data.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4 mb-4">
+      <div class="card h-100 border-0 shadow-sm" style="background-color: #D4E6F1;">
+        <div class="card-body text-center p-4">
+          <i class="bi bi-graph-up display-1 mb-3"></i>
+          <h3 class="card-title">See Patterns</h3>
+          <p class="card-text">Visualize trends and patterns in your mood over time with clear charts.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4 mb-4">
+      <div class="card h-100 border-0 shadow-sm" style="background-color: #E8DAEF;">
+        <div class="card-body text-center p-4">
+          <i class="bi bi-lightbulb display-1 mb-3"></i>
+          <h3 class="card-title">Gain Insights</h3>
+          <p class="card-text">Discover connections between activities, sleep, and mood fluctuations.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mt-5">
+    <div class="col-12">
+      <div class="p-5 rounded-3" style="background-color: #FADBD8;">
+        <div class="row align-items-center">
+          <div class="col-lg-8">
+            <h2>Ready to begin your mood tracking journey?</h2>
+            <p class="lead">Create an account to save your mood entries and access your personal dashboard.</p>
+          </div>
+          <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
+            <a href="/users/sign_up" class="btn btn-lg px-4" style="background-color: #D7BDE2; color: #333;">Sign Up</a>
+            <a href="/users/sign_in" class="btn btn-lg px-4 ms-2" style="background-color: #AED6F1; color: #333;">Login</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
