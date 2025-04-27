@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_04_26_142739) do
+ActiveRecord::Schema[8.0].define(version: 2025_04_26_200141) do
   create_table "subtasks", force: :cascade do |t|
     t.string "title"
     t.text "description"
@@ -18,6 +18,8 @@ ActiveRecord::Schema[8.0].define(version: 2025_04_26_142739) do
     t.string "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "notion_page_id"
+    t.index ["notion_page_id"], name: "index_subtasks_on_notion_page_id"
   end
 
   create_table "tasks", force: :cascade do |t|
@@ -28,5 +30,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_04_26_142739) do
     t.string "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "notion_page_id"
+    t.index ["notion_page_id"], name: "index_tasks_on_notion_page_id"
   end
 end
