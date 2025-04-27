@@ -4,7 +4,14 @@
       <div class="card border-0 shadow-sm mb-4">
         <div class="card-body p-4">
           <div class="d-flex justify-content-between align-items-center mb-3">
-            <h1 class="card-title mb-0"><%= @task.title %></h1>
+            <h1 class="card-title mb-0">
+              <%= @task.title %>
+              <% if @task.notion_page_id.present? %>
+                <%= link_to notion_page_url(@task.notion_page_id), target: "_blank", class: "ms-2 fs-6", title: "View in Notion" do %>
+                  <i class="bi bi-box-arrow-up-right"></i>
+                <% end %>
+              <% end %>
+            </h1>
             <div>
               <%= link_to "Edit", edit_task_path(@task), class: "btn btn-sm btn-outline-secondary me-2" %>
               <%= button_to "Delete", @task, method: :delete, class: "btn btn-sm btn-outline-danger",
@@ -44,7 +51,14 @@
               <% @task.subtasks.each do |subtask| %>
                 <li class="list-group-item d-flex justify-content-between align-items-center">
                   <div>
-                    <h6 class="mb-1"><%= subtask.title %></h6>
+                    <h6 class="mb-1">
+                      <%= subtask.title %>
+                      <% if subtask.notion_page_id.present? %>
+                        <%= link_to notion_page_url(subtask.notion_page_id), target: "_blank", class: "ms-1 small", title: "View in Notion" do %>
+                          <i class="bi bi-box-arrow-up-right"></i>
+                        <% end %>
+                      <% end %>
+                    </h6>
                     <p class="mb-1 text-muted small"><%= subtask.description %></p>
                     <span class="badge" style="background-color: <%= subtask.status == 'completed' ? '#d1e7dd' : (subtask.status == 'in_progress' ? '#fff3cd' : '#f8d7da') %>;">
                       <%= subtask.status.titleize.gsub('_', ' ') %>
